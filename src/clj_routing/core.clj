@@ -55,7 +55,7 @@
         (if (.matches matcher)
           [name (zipmap sym-segments (rest (re-groups matcher)))])))))
 
-(defn compile-generator
+(defn compiled-generator
   "Given a seq-able of route definitions, returns a function that takes a name 
   and params and returns a [method path unused-params] tuple."
   [routes]
@@ -70,7 +70,7 @@
         (named-generator params)
         (throwf "Unrecognized route name: %s" name)))))
 
-(defn compile-recognizer
+(defn compiled-recognizer
   "Given a seq-able of route definitions, returns a function that takes a method 
   and path and returns a [name params] tuple."
   [routes]

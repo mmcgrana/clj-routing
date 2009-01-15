@@ -12,8 +12,8 @@
    [:with-root   :get ":root/foo"                        ]
    [:catch-all   :get "foo/:path"   {:path   ".*"}       ]])
 
-(def gen (compile-generator routes))
-(def rec (compile-recognizer routes))
+(def gen (compiled-generator routes))
+(def rec (compiled-recognizer routes))
 
 
 (deftest "Returns static route with all params unused"

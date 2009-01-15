@@ -15,8 +15,8 @@ h2. Usage
    [:with-conds  :get "/foo/:action" {:action "biz|bats"} ]
    [:catch-all   :any "/:path"       {:path   ".*"}       ]])
 
-(def generate  (compile-generator  routes))
-(def recognize (compile-recognizer routes))
+(def generate  (compiled-generator  routes))
+(def recognize (compiled-recognizer routes))
 
 (generate :index-bars)
 => [:get "/foo/bars" nil]
