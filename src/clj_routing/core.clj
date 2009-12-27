@@ -10,7 +10,7 @@
   symbols to the named dynamic segments."
   [pattern]
   (let [split-pattern (re-partition #":[a-z-]+" pattern)
-        segments (map (fn [seg-str]
+        segments (map (fn [#^String seg-str]
                         (if (.startsWith seg-str ":")
                           (keyword (.substring seg-str 1))
                           seg-str))
